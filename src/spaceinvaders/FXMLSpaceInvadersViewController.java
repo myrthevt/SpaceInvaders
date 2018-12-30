@@ -3,33 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spaceinvaders;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
-/**
- *
- * @author vantichelen
- */
-public class FXMLSpaceInvadersViewController implements Initializable {
-    
+public class FXMLSpaceInvadersViewController {
+
     @FXML
-    private Label label;
-    
+    private ResourceBundle resources;
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private URL location;
+
+    @FXML
+    private AnchorPane achtergrond;
+
+    @FXML
+    private ImageView alien;
+
+    @FXML
+    void initialize() {
+        assert achtergrond != null : "fx:id=\"achtergrond\" was not injected: check your FXML file 'Untitled'.";
+        assert alien != null : "fx:id=\"alien\" was not injected: check your FXML file 'Untitled'.";
+
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
 }
+   
+    
+
