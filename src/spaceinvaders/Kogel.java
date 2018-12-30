@@ -10,8 +10,8 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class Kogel {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public Kogel(int x, int y) {
         this.x = x;
