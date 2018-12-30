@@ -10,7 +10,7 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class Alien {
-    private int x:
+    private int x;
     private int y;
 
     public Alien(int x, int y) {
@@ -45,5 +45,15 @@ public class Alien {
     public void setY(int y) {
         this.y = y;
     }
+    public void BeweegRechts(){
+        x++;
+    }
+    public void BeweegLinks(){
+        x--;
+    }
+    public void BeweegOmlaag(){
+        y++;
+    }
+    }
     
-}
+    
