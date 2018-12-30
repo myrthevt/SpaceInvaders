@@ -46,4 +46,13 @@ public class LaserKanon {
         this.y = y;
     }
     
+    public void beweegNaarRechts(){
+        x++;
+    }
+    
+    public void beweegNaarLinks(){
+        x--;
+    
+    
+    }
 }
