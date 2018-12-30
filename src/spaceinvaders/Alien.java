@@ -10,8 +10,8 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class Alien {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public Alien(int x, int y) {
         this.x = x;
@@ -54,6 +54,14 @@ public class Alien {
     public void BeweegOmlaag(){
         y++;
     }
+    public boolean IsGeraakt(){
+        if (Kogel.x == this.x && Kogel.y == this.y){
+            return true;}
+        else {
+            return false;}
+        }
+        
     }
+    
     
     
