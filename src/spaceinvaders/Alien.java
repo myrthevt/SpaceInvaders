@@ -80,9 +80,15 @@ public class Alien {
         else {
             return false;
         }
-        }
-        
+       }
+    //public void Verdwijn(){
+        //if(IsGeraakt() == true)
+        //Hide(FXMLSpaceInvadersViewController.alien);
+    //}
     }
+    
+        
+    
     
     
     
