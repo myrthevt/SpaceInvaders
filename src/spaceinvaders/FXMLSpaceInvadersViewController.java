@@ -5,6 +5,8 @@
  */
 
 
+package spaceinvaders;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -27,11 +29,8 @@ public class FXMLSpaceInvadersViewController {
 
     @FXML
     void initialize() {
-        assert achtergrond != null : "fx:id=\"achtergrond\" was not injected: check your FXML file 'Untitled'.";
-        assert alien != null : "fx:id=\"alien\" was not injected: check your FXML file 'Untitled'.";
+        assert achtergrond != null : "fx:id=\"achtergrond\" was not injected: check your FXML file 'FXMLSpaceInvadersView.fxml'.";
+        assert alien != null : "fx:id=\"alien\" was not injected: check your FXML file 'FXMLSpaceInvadersView.fxml'.";
 
     }
 }
-   
-    
-
