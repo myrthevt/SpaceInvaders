@@ -56,9 +56,11 @@ public class Alien {
     }
     public boolean IsGeraakt(){
         if (Kogel.x == this.x && Kogel.y == this.y){
-            return true;}
+            return true;
+        }
         else {
-            return false;}
+            return false;
+        }
         }
         
     }
