@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+
 package spaceinvaders;
+
+
 
 /**
  *
@@ -46,6 +51,19 @@ public class Kogel {
         this.y = y;
     }
     
+    
+    public void BeweegNaarBoven(){
+        y--;
+    }
+    
+    public boolean RaaktAlien(){
+        if (Kogel.x == this.x && Kogel.y == this.y){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     
 }
