@@ -15,43 +15,51 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class Kogel {
+    //datamembers
     public static int x;
     public static int y, dy;
 
+    //constructor
     public Kogel(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     /**
-     * @return the x
+     * wat is het x-coördinaat van de kogel
+     * @return het x-coördinaat
      */
     public int getX() {
         return x;
     }
 
     /**
-     * @param x the x to set
+     * Verander x-coördinaat van de kogel
+     * @param x het nieuwe x-coördinaat
      */
     public void setX(int x) {
         this.x = x;
     }
 
     /**
-     * @return the y
+     * wat is het y-coördinaat van de kogel?
+     * @return y-coördinaat
      */
     public int getY() {
         return y;
     }
 
     /**
-     * @param y the y to set
+     * verander het y-coördinaat van de kogel
+     * @param y nieuwe y-Coördinaat
      */
     public void setY(int y) {
         this.y = y;
     }
     
-    
+    /**
+     * beweeg de kogel ,aar boven
+     */
     public void BeweegNaarBoven(){
         y--;
     }
@@ -62,6 +70,10 @@ public class Kogel {
     public void tick(){
         y = y + dy;
     }
+    /**
+     * Heeft de kogel een Alien geraakt?
+     * @return true of false
+     */
     public boolean RaaktAlien(){
         if (this.x == Alien.x && this.y == Alien.y){
             return true;
