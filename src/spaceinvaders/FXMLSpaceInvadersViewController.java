@@ -25,12 +25,11 @@ public class FXMLSpaceInvadersViewController {
     private AnchorPane achtergrond;
 
     @FXML
-    private ImageView alien;
+     ImageView alien;
 
     @FXML
     void initialize() {
-        assert achtergrond != null : "fx:id=\"achtergrond\" was not injected: check your FXML file 'FXMLSpaceInvadersView.fxml'.";
-        assert alien != null : "fx:id=\"alien\" was not injected: check your FXML file 'FXMLSpaceInvadersView.fxml'.";
-
+            alien = new ImageView("https://www.google.com/search?q=space%20invader%20alien&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiDr5PF3cffAhWMZVAKHWLxAE0Q_AUIDigB&biw=1440&bih=692&fbclid=IwAR1ww0TVcY9Akai8c-G1JnuqjLt3BEBBagpptsyoa6hepN3otrcD_cFeWL8#imgrc=rKxVf3kxU2vSiM");
+            
     }
 }
