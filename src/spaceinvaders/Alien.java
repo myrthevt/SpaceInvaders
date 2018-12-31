@@ -10,8 +10,8 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class Alien {
-    public int x;
-    public int y;
+    public static int x;
+    public static int y;
 
     public Alien(int x, int y) {
         this.x = x;
