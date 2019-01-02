@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 
-
 package spaceinvaders;
 
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 
-public class FXMLSpaceInvadersViewController {
+public class FXMLSpaceInvadersViewController{ 
 
     @FXML
     private ResourceBundle resources;
@@ -25,11 +26,42 @@ public class FXMLSpaceInvadersViewController {
     private AnchorPane achtergrond;
 
     @FXML
-     ImageView alien;
+    private ImageView alien;
+
+    @FXML
+    private ImageView laserKanon;
+
+    @FXML
+    private Circle kogel;
+
+ 
+
 
     @FXML
     void initialize() {
-            alien = new ImageView("https://www.google.com/search?q=space%20invader%20alien&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiDr5PF3cffAhWMZVAKHWLxAE0Q_AUIDigB&biw=1440&bih=692&fbclid=IwAR1ww0TVcY9Akai8c-G1JnuqjLt3BEBBagpptsyoa6hepN3otrcD_cFeWL8#imgrc=rKxVf3kxU2vSiM");
-            
+        laserKanon.setOnKeyPressed(this::beweegNaarRechts);
+        kogel.setOnKeyPressed(this::BeweegNaarBoven);
+        alien.setOnAction(this::doeIets);
+        
     }
+    
+    public void beweegNaarRechts(KeyEvent event){
+        
+        
+        
+        
+    }
+    public void BeweegNaarBoven(){
+    
+    }
+    
+    
+    public void doeIets(){
+    
+    }
+        
+    } 
+   
 }
+    
+
