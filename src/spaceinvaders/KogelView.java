@@ -5,10 +5,26 @@
  */
 package spaceinvaders;
 
+import java.awt.Rectangle;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+
 /**
  *
  * @author vantichelen
  */
-public class KogelView {
+public class KogelView extends Region {
+    private Kogel model;
+
+    public KogelView(Kogel model) {
+        this.model = model;
+        update();
+    }
+    public void update(){
+        Circle kogel = new Circle(model.getX(), model.getY(), 5, Color.VIOLET);
+        getChildren().add(kogel);
+    }
     
 }
