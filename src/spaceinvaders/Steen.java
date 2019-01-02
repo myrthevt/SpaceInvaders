@@ -46,7 +46,9 @@ public class Steen {
         this.y = y;
     }
     
-   
+   public void BeweegNaarOnder(){
+       y++;
+   }
     
 
     
