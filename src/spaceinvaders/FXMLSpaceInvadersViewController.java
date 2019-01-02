@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 public class FXMLSpaceInvadersViewController{ 
 
@@ -33,6 +34,9 @@ public class FXMLSpaceInvadersViewController{
 
     @FXML
     private Circle kogel;
+    
+    @FXML
+    private Rectangle steen;
 
  
 
