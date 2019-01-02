@@ -5,7 +5,7 @@
  */
 package spaceinvaders;
 
-import java.awt.Rectangle;
+
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
