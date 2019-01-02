@@ -83,5 +83,12 @@ public class Kogel {
         }
     }
     
+    //public void Verdwijn(){
+        //if(IsGeraakt() == true){
+        //Hide(FXMLSpaceInvadersViewController.Kogel);
+        //}
+    //}
+    
+    
     
 }
