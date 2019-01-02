@@ -49,6 +49,10 @@ public class Steen {
    public void BeweegNaarOnder(){
        y++;
    }
+   
+   public void tick (){
+       y = y + dy;
+   }
     
 
     
