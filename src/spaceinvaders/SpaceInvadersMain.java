@@ -19,13 +19,31 @@ public class SpaceInvadersMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLSpaceInvadersView.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+      //model
+      SpaceInvadersModel model = new SpaceInvadersModel();
+      Alien alien = new Alien(0,0);
+      Kogel kogel = new Kogel(10,10);
+      LaserKanon laserkanon = new LaserKanon(20,50);
+      Steen steen = new Steen(30,30);
+     
+      
+      //view
+      FXMLLoader lader = new FXMLLoader(getClass().getResource("FXMLSpaceInvadersView.fxml"));
+      Parent view = lader.load();
+      
+      //controller
+      FXMLSpaceInvadersViewController controller = lader.getController();
+      
+      //Alles aan elkaar linken
+      controller.setModel(model);
+      
+      Scene scene = new Scene(view);
+      
+      stage.setScene(scene);
+      stage.show();
     }
+      
+      
 
     /**
      * @param args the command line arguments
