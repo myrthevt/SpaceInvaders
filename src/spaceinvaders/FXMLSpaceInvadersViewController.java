@@ -46,10 +46,15 @@ public class FXMLSpaceInvadersViewController {
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
                 case RIGHT:
-                     System.out.println("right");
                     
                     model.getKanon().beweegNaarRechts();
                     update();
+                    break;
+                case LEFT:
+                    
+                    model.getKanon().beweegNaarLinks();
+                    update();
+                    break;
                 //case KP_UP:
                 //case SPACE:
                 //case Z:    
