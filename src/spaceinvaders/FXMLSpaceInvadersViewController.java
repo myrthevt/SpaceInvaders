@@ -14,8 +14,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+ 
 
-public class FXMLSpaceInvadersViewController{ 
+public class FXMLSpaceInvadersViewController {
 
     @FXML
     private ResourceBundle resources;
@@ -27,26 +28,24 @@ public class FXMLSpaceInvadersViewController{
     private AnchorPane achtergrond;
 
     @FXML
+    private ImageView achtergrondSpel;
+
+    @FXML
     private ImageView alien;
 
-    @FXML
-    private ImageView laserKanon;
 
-    @FXML
-    private Circle kogel;
+    private SpaceInvadersModel model; // controller moet eigenschappen van het model kunnen veranderen
+    private SpaceInvadersView view; 
     
     @FXML
-    private Rectangle steen;
-
- 
-
-
-    @FXML
     void initialize() {
-        laserKanon.setOnKeyPressed(this::beweegNaarRechts);
-        kogel.setOnKeyPressed(this::BeweegNaarBoven);
-        alien.setOnAction(this::doeIets);
-        
+        assert achtergrond != null : "fx:id=\"achtergrond\" was not injected: check your FXML file 'FXMLSpaceInvadersView.fxml'.";
+
+    }
+    public void setModel(SpaceInvadersModel model){
+        this.model = model;
+        view = new SpaceInvadersView (model);
+        achtergrond.getChildren().add(view);
     }
     
     public void beweegNaarRechts(KeyEvent event){
@@ -63,9 +62,6 @@ public class FXMLSpaceInvadersViewController{
     public void doeIets(){
     
     }
-        
-    } 
-   
-}
+} 
     
 
