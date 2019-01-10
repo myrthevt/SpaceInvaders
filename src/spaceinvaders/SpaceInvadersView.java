@@ -5,6 +5,7 @@
  */
 package spaceinvaders;
 
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -15,9 +16,9 @@ import javafx.scene.shape.Rectangle;
  * @author femke
  */
 public class SpaceInvadersView extends Region {
-    private SpaceInvaders model;
+    private SpaceInvadersModel model;
     
-    public SpaceInvadersView (SpaceInvaders model){
+    public SpaceInvadersView (SpaceInvadersModel model){
         this.model = model;
         update ();
     }
@@ -32,6 +33,8 @@ public class SpaceInvadersView extends Region {
       getChildren().add(kogel);
       Rectangle steen = new Rectangle(295,1, 70, 200);
       getChildren().add(steen);
+      ImageView alien = new ImageView("alienFoto.png");
+      getChildren().add(alien);
       
       }
      
