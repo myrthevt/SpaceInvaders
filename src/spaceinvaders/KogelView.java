@@ -12,6 +12,9 @@ import javafx.scene.shape.Circle;
 
 /**
  *
+    public void update(){
+        Circle kogel = new Circle(model.getX(), model.getY(), 5, Color.VIOLET);
+        getChildren().add(kogel);
  * @author vantichelen
  */
 public class KogelView extends Region {
