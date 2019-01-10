@@ -37,8 +37,8 @@ public class SpaceInvadersView extends Region {
       ImageView laserKanon = new ImageView("laserKanonFoto.bmp");
         laserKanon.setFitHeight(140);
         laserKanon.setFitWidth(150);
-        laserKanon.setLayoutX(560);
-        laserKanon.setLayoutY(550);
+        laserKanon.setLayoutX(model.getKanon().getX());
+        laserKanon.setLayoutY(model.getKanon().getY());
       getChildren().add(laserKanon);
       
       Circle kogel = new Circle(Kogel.getX(), Kogel.getY(), 7, Color.VIOLET);
