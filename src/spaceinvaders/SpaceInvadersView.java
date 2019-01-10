@@ -29,17 +29,32 @@ public class SpaceInvadersView extends Region {
            
     public void update(){
       getChildren().clear();
-      Circle kogel = new Circle(Kogel.getX(), Kogel.getY(), 5, Color.VIOLET);
-      getChildren().add(kogel);
-      Rectangle steen = new Rectangle(295,1, 70, 200);
-      getChildren().add(steen);
       ImageView achtergrond = new ImageView("achtergrondSpelFoto.png");
       getChildren().add(achtergrond);
+        achtergrond.setFitHeight(1080);
+        achtergrond.setFitWidth(1920);
+      
       ImageView laserKanon = new ImageView("laserKanonFoto.bmp");
+        laserKanon.setFitHeight(140);
+        laserKanon.setFitWidth(150);
+        laserKanon.setLayoutX(560);
+        laserKanon.setLayoutY(550);
       getChildren().add(laserKanon);
+      
+      Circle kogel = new Circle(Kogel.getX(), Kogel.getY(), 7, Color.VIOLET);
+        kogel.setLayoutX(625);
+        kogel.setLayoutY(550);
+      getChildren().add(kogel);
+      
+      Rectangle steen = new Rectangle(20, 40, 20, 25);
+      getChildren().add(steen);
+      
       ImageView alien = new ImageView("alienFoto.png");
-        alien.setFitHeight(20);
-        alien.setFitWidth(30);
+        alien.setFitHeight(50);
+        alien.setFitWidth(60);
+        alien.setLayoutX(100);
+        alien.setLayoutY(80);
+
       getChildren().add(alien);
       }
      
