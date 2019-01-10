@@ -7,6 +7,8 @@ package spaceinvaders;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 /**
  *
@@ -20,7 +22,7 @@ public class AlienView extends Region {
         update();
     }
     public void update(){
-        ImageView alien = new ImageView("49742769_2163177273899539_4121474896691724288_n");
+        ImageView alien = new ImageView("alienFoto.png[R/-]");
         getChildren().add(alien);
     }
     
