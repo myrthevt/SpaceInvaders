@@ -32,33 +32,38 @@ public class FXMLSpaceInvadersViewController {
     
     @FXML
     void initialize() {
-        achtergrond.setOnKeyPressed(this::beweegKanon);
+        System.out.println("ddjhgj");
     }
     
     public void setModel(SpaceInvadersModel model){
         this.model = model;
         view = new SpaceInvadersView (model);
         achtergrond.getChildren().add(view);
+        view.setFocusTraversable(true);
+        view.requestFocus();
+        view.setOnKeyPressed(this::beweegKanon);
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
-        switch(e.getCode()){
+         switch(e.getCode()){
                 case RIGHT:
-                    LaserKanon.beweegNaarRechts();
+                     System.out.println("right");
+                    
+                    model.getKanon().beweegNaarRechts();
+                    update();
                 //case KP_UP:
                 //case SPACE:
                 //case Z:    
                     //model.boven();
                     //update();
                     //break;
-    }
+        }
     
-    //public void beweegNaarRechts(KeyEvent event){
-        
-        
-        
-        
     }
-    public void BeweegNaarBoven(){
+
+    public void update() {
+        view.update();
+    }
+    public void beweegNaarBoven(){
     
     }
     
