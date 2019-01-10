@@ -33,9 +33,12 @@ public class SpaceInvadersView extends Region {
       getChildren().add(kogel);
       Rectangle steen = new Rectangle(295,1, 70, 200);
       getChildren().add(steen);
+      ImageView achtergrond = new ImageView("achtergrondSpelFoto.png");
+      getChildren().add(achtergrond);
       ImageView alien = new ImageView("alienFoto.png");
       getChildren().add(alien);
-      
+      ImageView laserKanon = new ImageView("laserKanonFoto.bmp");
+      getChildren().add(laserKanon);
       }
      
           
