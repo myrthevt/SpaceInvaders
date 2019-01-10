@@ -12,14 +12,24 @@ import java.util.ArrayList;
  * @author femke
  */
 public class SpaceInvadersModel {
-    private ArrayList<Alien> Alien;
+    private LaserKanon kanon;
+    private ArrayList<Alien> alien;
     
     public SpaceInvadersModel(){
-        this.Alien = new ArrayList<>();
+        this.alien = new ArrayList<>();
+        kanon = new LaserKanon(200,400);
     }
     
     public ArrayList<Alien> getAlien(){
-        return Alien;
+        return alien;
     }
+
+    /**
+     * @return the kanon
+     */
+    public LaserKanon getKanon() {
+        return kanon;
+    }
+    
     
 }
