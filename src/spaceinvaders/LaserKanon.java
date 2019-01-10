@@ -10,8 +10,8 @@ package spaceinvaders;
  * @author vantichelen
  */
 public class LaserKanon {
-    private static int x;
-    private static int y;
+    private int x;
+    private int y;
 
     public LaserKanon(int x, int y) {
         this.x = x;
@@ -46,7 +46,7 @@ public class LaserKanon {
         this.y = y;
     }
     
-    public static void beweegNaarRechts(){
+    public void beweegNaarRechts(){
         x++;
     }
     
