@@ -41,6 +41,9 @@ public class SpaceInvadersMain extends Application {
       
       stage.setScene(scene);
       stage.show();
+      stage.setMinHeight(400);
+      stage.setMinWidth(600);
+      
     }
       
       
