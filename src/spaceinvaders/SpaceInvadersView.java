@@ -46,7 +46,7 @@ public class SpaceInvadersView extends Region {
         kogel.setLayoutY(550);
       getChildren().add(kogel);
       
-      Rectangle steen = new Rectangle(20, 40, 5, 15);
+      Rectangle steen = new Rectangle(127, 140, 5, 15);
         steen.setFill(Color.ORANGE);
       getChildren().add(steen);
       
