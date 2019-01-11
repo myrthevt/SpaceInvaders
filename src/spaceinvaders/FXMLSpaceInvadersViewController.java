@@ -42,6 +42,7 @@ public class FXMLSpaceInvadersViewController {
         view.setFocusTraversable(true);
         view.requestFocus();
         view.setOnKeyPressed(this::beweegKanon);
+        //view.setOnKeyPressed(this::schietKogel);
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -63,7 +64,18 @@ public class FXMLSpaceInvadersViewController {
                     //break;
         }
     
+    
     }
+     
+    //public void schietKogel(javafx.scene.input.KeyEvent e){
+        //switch(e.getCode()){ 
+                //case ENTER:
+                
+                    //model.getKogel().beweegNaarBoven();
+                
+          
+        //} 
+    //}
 
     public void update() {
         view.update();
