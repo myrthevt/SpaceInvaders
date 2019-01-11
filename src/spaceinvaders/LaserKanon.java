@@ -12,6 +12,7 @@ package spaceinvaders;
 public class LaserKanon {
     private int x;
     private int y;
+    private int v;
 
     public LaserKanon(int x, int y) {
         this.x = x;
@@ -47,11 +48,11 @@ public class LaserKanon {
     }
     
     public void beweegNaarRechts(){
-        x++;
+        x = (x+5);
     }
     
     public void beweegNaarLinks(){
-        x--;
+        x = (x-5);
     
     
     }
