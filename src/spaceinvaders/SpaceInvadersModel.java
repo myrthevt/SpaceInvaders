@@ -17,7 +17,7 @@ public class SpaceInvadersModel {
     
     public SpaceInvadersModel(){
         this.alien = new ArrayList<>();
-        kanon = new LaserKanon(200,400);
+        kanon = new LaserKanon(560,580);
     }
     
     public ArrayList<Alien> getAlien(){
