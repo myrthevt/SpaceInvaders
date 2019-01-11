@@ -14,10 +14,13 @@ import java.util.ArrayList;
 public class SpaceInvadersModel {
     private LaserKanon kanon;
     private ArrayList<Alien> alien;
+    private Kogel kogel;
     
     public SpaceInvadersModel(){
         this.alien = new ArrayList<>();
         kanon = new LaserKanon(560,580);
+        kogel = new Kogel(625,550);
+        
     }
     
     public ArrayList<Alien> getAlien(){
@@ -29,6 +32,14 @@ public class SpaceInvadersModel {
      */
     public LaserKanon getKanon() {
         return kanon;
+    }
+    
+    /**
+     * @return the kogel
+     */
+    
+    public Kogel getKogel() {
+        return kogel;
     }
     
     
