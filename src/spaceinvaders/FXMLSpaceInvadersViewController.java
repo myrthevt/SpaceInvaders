@@ -82,6 +82,12 @@ public class FXMLSpaceInvadersViewController {
         
     
     }
+    public void beweegNaarOnder(){
+        SteenBeweger steenbeweger = new SteenBeweger(model, view);
+        Thread t = new Thread ();
+        t.start();
+        
+    }
     
     public void doeIets(){
     
