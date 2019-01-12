@@ -9,6 +9,7 @@ package spaceinvaders;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
@@ -43,8 +44,6 @@ public class FXMLSpaceInvadersViewController {
         view.requestFocus();
         
         view.setOnKeyPressed(this::beweegKanon);
-        
-        //view.setOnKeyPressed(this::schietKogel);
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -61,7 +60,7 @@ public class FXMLSpaceInvadersViewController {
                 
                 case SPACE:
                      
-                     model.getKogel().BeweegNaarBoven();
+                    this.beweegNaarBoven(e);
                     update();
                     
          }
@@ -76,10 +75,13 @@ public class FXMLSpaceInvadersViewController {
     public void update() {
         view.update();
     }
-    public void beweegNaarBoven(){
+    public void beweegNaarBoven(javafx.scene.input.KeyEvent e){
+        KogelBeweger kogelBeweger = new KogelBeweger(model, view);
+        Timer t = new Timer(true);
+        t.scheduleAtFixedRate(kogelBeweger,1,30);
+        
     
     }
-    
     
     public void doeIets(){
     
