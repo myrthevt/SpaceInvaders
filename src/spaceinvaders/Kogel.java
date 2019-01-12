@@ -29,7 +29,7 @@ public class Kogel {
      * wat is het x-coördinaat van de kogel
      * @return het x-coördinaat
      */
-    public static int getX() {
+    public int getX() {
         return x;
     }
 
@@ -45,7 +45,7 @@ public class Kogel {
      * wat is het y-coördinaat van de kogel?
      * @return y-coördinaat
      */
-    public static int getY() {
+    public int getY() {
         return y;
     }
 
@@ -61,14 +61,15 @@ public class Kogel {
      * beweeg de kogel ,aar boven
      */
     public void BeweegNaarBoven(){
-        y--;
+        y = y - 5;
+        x = x;
     }
     
     /**
      * de kogel blijft naar boven gaan
      */
     public void tick(){
-        y = y + dy;
+            y = y + 5;
     }
     /**
      * Heeft de kogel een Alien geraakt?
