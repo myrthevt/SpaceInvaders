@@ -44,5 +44,9 @@ public class SpaceInvadersModel {
         return kogel;
     }
     
+    public Steen getSteen(){
+        return steen;
+    }
+    
     
 }
