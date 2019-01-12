@@ -47,7 +47,7 @@ public class Steen {
     }
     
    public void BeweegNaarOnder(){
-       y++;
+       y = y + 5;
    }
    
    public void tick (){
