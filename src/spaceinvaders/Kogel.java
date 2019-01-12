@@ -24,7 +24,6 @@ public class Kogel {
         this.x = x;
         this.y = y;
     }
-
     /**
      * wat is het x-coördinaat van de kogel
      * @return het x-coördinaat
@@ -58,11 +57,11 @@ public class Kogel {
     }
     
     /**
-     * beweeg de kogel ,aar boven
+     * beweeg de kogel naar boven
      */
-    public void BeweegNaarBoven(){
-        y = y - 5;
-        x = x;
+    public void beweegNaarBoven(){
+            y = y - 5;
+            x = x;
     }
     
     /**
