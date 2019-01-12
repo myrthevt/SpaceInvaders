@@ -41,9 +41,9 @@ public class SpaceInvadersView extends Region {
         laserKanon.setLayoutY(model.getKanon().getY());
       getChildren().add(laserKanon);
       
-      Circle kogel = new Circle(Kogel.getX(), Kogel.getY(), 7, Color.VIOLET);
-        kogel.setLayoutX(625);
-        kogel.setLayoutY(550);
+      Circle kogel = new Circle(model.getKogel().getX(), model.getKogel().getY(), 7, Color.VIOLET);
+        kogel.setLayoutX(model.getKanon().getX());
+        kogel.setLayoutY(model.getKanon().getY());
       getChildren().add(kogel);
       
       Rectangle steen = new Rectangle(127, 140, 5, 15);
