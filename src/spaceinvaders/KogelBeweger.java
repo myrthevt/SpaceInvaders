@@ -16,18 +16,14 @@ public class KogelBeweger extends TimerTask {
     private SpaceInvadersModel model;
     private SpaceInvadersView view;
     
-    
-    public KogelBeweger (SpaceInvadersModel model, SpaceInvadersView view){
+    public KogelBeweger(SpaceInvadersModel model, SpaceInvadersView view){
         this.model = model;
         this.view = view;
     }
     
-
-    @Override
-    public void run() {
-        model.getKogel().BeweegNaarBoven();
-        Platform.runLater(()->view.update());
+    public void run(){
+        model.getKogel().beweegNaarBoven();
+        Platform.runLater(()-> view.update());
     }
-    
-    
+            
 }
