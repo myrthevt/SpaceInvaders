@@ -42,7 +42,7 @@ public class SpaceInvadersView extends Region {
       getChildren().add(laserKanon);
       
       Circle kogel = new Circle(model.getKogel().getX(), model.getKogel().getY(), 7, Color.VIOLET);
-        kogel.setLayoutX(model.getKanon().getX());
+        kogel.setLayoutX(model.getKanon().getX()+ 65);
         kogel.setLayoutY(model.getKanon().getY());
       getChildren().add(kogel);
       
