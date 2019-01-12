@@ -15,11 +15,13 @@ public class SpaceInvadersModel {
     private LaserKanon kanon;
     private ArrayList<Alien> alien;
     private Kogel kogel;
+    private Steen steen;
     
     public SpaceInvadersModel(){
         this.alien = new ArrayList<>();
         kanon = new LaserKanon(560,580);
         kogel = new Kogel(300,580);
+        steen = new Steen(400,150);
         
     }
     
