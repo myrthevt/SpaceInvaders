@@ -22,10 +22,7 @@ public class SpaceInvadersMain extends Application {
       //model
       SpaceInvadersModel model = new SpaceInvadersModel();
       Alien alien = new Alien(0,0);
-      Kogel kogel = new Kogel(10,10);
       LaserKanon laserkanon = new LaserKanon(20,50);
-      Steen steen = new Steen(30,30);
-     
       
       //view
       FXMLLoader lader = new FXMLLoader(getClass().getResource("FXMLSpaceInvadersView.fxml"));
