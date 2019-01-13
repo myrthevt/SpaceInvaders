@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
@@ -42,8 +43,9 @@ public class FXMLSpaceInvadersViewController {
         achtergrond.getChildren().add(view);
         view.setFocusTraversable(true);
         view.requestFocus();
-        
+                
         view.setOnKeyPressed(this::beweegKanon);
+        this.animate();
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -60,8 +62,8 @@ public class FXMLSpaceInvadersViewController {
                 
                 case SPACE:
                      
-                    this.beweegNaarBoven(e);
-                    update();
+                    this.vuurKogel();
+                    break;
                     
          }
         }
@@ -75,23 +77,32 @@ public class FXMLSpaceInvadersViewController {
     public void update() {
         view.update();
     }
-    public void beweegNaarBoven(javafx.scene.input.KeyEvent e){
-        KogelBeweger kogelBeweger = new KogelBeweger(model, view);
-        Timer t = new Timer(true);
-        t.scheduleAtFixedRate(kogelBeweger,1,30);
-        
-    
+   
+    private void animate() {
+        new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                model.getAlien().Beweeg(1000);
+                
+                for(Kogel kogel : model.getKogels()) {
+                    if (kogel.getY() <= 0) {
+                        model.getKogels().remove(kogel);
+                    }
+                }
+                
+                for(Kogel kogel : model.getKogels()) {
+                    kogel.beweegNaarBoven();
+                }
+                
+                update();
+            }
+        }.start();
     }
-    public void beweegNaarOnder(){
-        SteenBeweger steenbeweger = new SteenBeweger(model, view);
-        Thread t = new Thread ();
-        t.start();
-        
-    }
     
-    public void doeIets(){
-    
+     public void vuurKogel(){
+        model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
     }
+
 } 
     
 
