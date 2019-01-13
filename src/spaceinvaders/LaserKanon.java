@@ -53,7 +53,7 @@ public class LaserKanon {
     
     public void beweegNaarLinks(){
         x = (x-5);
-    
-    
     }
+    
+    
 }
