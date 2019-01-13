@@ -67,12 +67,6 @@ public class FXMLSpaceInvadersViewController {
                     
          }
         }
-     
-    //public void schietKogel(javafx.scene.input.KeyEvent e){
-        //switch(e.getCode()){ 
-                //case ENTER:
-                    //model.getKogel().tick();
-                    //update(); 
 
     public void update() {
         view.update();
@@ -82,8 +76,9 @@ public class FXMLSpaceInvadersViewController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                model.getAlien().Beweeg(1000);
-                
+                for(Alien alien : model.getAliens()){
+                    alien.Beweeg(1080);
+                }
                 for(Kogel kogel : model.getKogels()) {
                     if (kogel.getY() <= 0) {
                         model.getKogels().remove(kogel);
