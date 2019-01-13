@@ -67,7 +67,7 @@ public class FXMLSpaceInvadersViewController {
                     
          }
         }
-
+     
     public void update() {
         view.update();
     }
@@ -76,9 +76,8 @@ public class FXMLSpaceInvadersViewController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                for(Alien alien : model.getAliens()){
-                    alien.Beweeg(1080);
-                }
+                model.getAlien().Beweeg(1000);
+                
                 for(Kogel kogel : model.getKogels()) {
                     if (kogel.getY() <= 0) {
                         model.getKogels().remove(kogel);
