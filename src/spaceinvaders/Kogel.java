@@ -16,8 +16,8 @@ package spaceinvaders;
  */
 public class Kogel {
     //datamembers
-    public static int x;
-    public static int y, dy;
+    public int x;
+    public int y, dy;
 
     //constructor
     public Kogel(int x, int y) {
@@ -60,28 +60,10 @@ public class Kogel {
      * beweeg de kogel naar boven
      */
     public void beweegNaarBoven(){
-            y = y - 5;
-            x = x;
+            y -= 15;
     }
+
     
-    /**
-     * de kogel blijft naar boven gaan
-     */
-    public void tick(){
-            y = y + 5;
-    }
-    /**
-     * Heeft de kogel een Alien geraakt?
-     * @return true of false
-     */
-    public boolean RaaktAlien(){
-        if (this.x == Alien.x && this.y == Alien.y){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
     
     //public void Verdwijn(){
         //if(IsGeraakt() == true){
