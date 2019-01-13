@@ -48,9 +48,13 @@ public class SpaceInvadersView extends Region {
           }
       }
       
-      Rectangle steen = new Rectangle(127, 140, 5, 15);
-        steen.setFill(Color.ORANGE);
-      getChildren().add(steen);
+      if(!model.getStenen().isEmpty()){
+         for(Steen steen : model.getStenen()){
+            Rectangle steenView = new Rectangle(127, 140, 5, 15);
+            steenView.setFill(Color.ORANGE);
+            getChildren().add(steenView);  
+        }
+      }
       
       ImageView alien = new ImageView("alienFoto.png");
         alien.setFitHeight(50);
