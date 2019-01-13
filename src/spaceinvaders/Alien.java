@@ -11,8 +11,10 @@ package spaceinvaders;
  */
 public class Alien {
     //datamembers
-    public static int x;
-    public static int y;
+    public int x;
+    public int y;
+    
+    public boolean gaatNaarLinks;
     
     //constructor
     public Alien(int x, int y) {
@@ -55,32 +57,35 @@ public class Alien {
      * beweeg naar rechts
      */
     public void BeweegRechts(){
-        x++;
+        x+=5;
     }
     /** 
      * beweeg naar links
      */
     public void BeweegLinks(){
-        x--;
+        x-=5;
     }
     /**
      * beweeg omlaag
      */
     public void BeweegOmlaag(){
-        y++;
+        y += 5;
     }
-    /**
-     * is de alien geraakt door een kogel
-     * @return true of false
-     */
-    public boolean IsGeraakt(){
-        if (Kogel.x == this.x && Kogel.y == this.y){
-            return true;
+    public void Beweeg(double maxWidth) {
+        if (x >= maxWidth) {
+            gaatNaarLinks = true;
         }
-        else {
-            return false;
+        if (x <= 0) {
+            gaatNaarLinks = false;
         }
-       }
+        
+        if (gaatNaarLinks) {
+            BeweegLinks();
+        } else {
+            BeweegRechts();
+        }
+    }
+    
     //public void Verdwijn(){
         //if(IsGeraakt() == true)
         //Hide(FXMLSpaceInvadersViewController.alien);
