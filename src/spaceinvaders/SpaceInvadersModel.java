@@ -17,11 +17,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class SpaceInvadersModel {
     private LaserKanon kanon;
     private Alien alien;
+//private CopyOnWriteArrayList<Alien> aliens;
     private CopyOnWriteArrayList<Kogel> kogels; //thread safe variant of ArrayList (item removed from animationtimer thread)
     private CopyOnWriteArrayList<Steen> stenen;
+    private int aantalAliens;
     
     public SpaceInvadersModel(){
         alien = new Alien(0,0);
+//aliens = new CopyOnWriteArrayList<Alien>();
         kanon = new LaserKanon(560,580);
         kogels = new CopyOnWriteArrayList<Kogel>();
         stenen = new CopyOnWriteArrayList<Steen>();
@@ -30,6 +33,9 @@ public class SpaceInvadersModel {
     public Alien getAlien(){
         return alien;
     }
+//public CopyOnWriteArrayList<Alien> getAliens(){
+        //return aliens;
+    //}
 
     /**
      * @return the kanon
