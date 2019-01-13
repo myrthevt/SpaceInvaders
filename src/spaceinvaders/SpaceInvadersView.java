@@ -50,21 +50,22 @@ public class SpaceInvadersView extends Region {
       
       if(!model.getStenen().isEmpty()){
          for(Steen steen : model.getStenen()){
-            Rectangle steenView = new Rectangle(127, 140, 5, 15);
+            Rectangle steenView = new Rectangle(steen.getX(),steen.getY(), 5, 15);
             steenView.setFill(Color.ORANGE);
             getChildren().add(steenView);  
         }
       }
-      
-      ImageView alien = new ImageView("alienFoto.png");
-        alien.setFitHeight(50);
-        alien.setFitWidth(60);
-        alien.setLayoutX(model.getAlien().getX());
-        alien.setLayoutY(model.getAlien().getY());
+      //for(Alien alien : model.getAliens()){
+            ImageView alienView = new ImageView("alienFoto.png");
+            alienView.setFitHeight(50);
+            alienView.setFitWidth(60);
+            alienView.setLayoutX(model.getAlien().getX());
+            alienView.setLayoutY(model.getAlien().getY());
 
-      getChildren().add(alien);
+        getChildren().add(alienView);
       }
     
      
           
     }
+
