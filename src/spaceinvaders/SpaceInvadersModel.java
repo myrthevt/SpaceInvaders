@@ -18,12 +18,13 @@ public class SpaceInvadersModel {
     private LaserKanon kanon;
     private Alien alien;
     private CopyOnWriteArrayList<Kogel> kogels; //thread safe variant of ArrayList (item removed from animationtimer thread)
-    private Steen steen;
+    private CopyOnWriteArrayList<Steen> stenen;
     
     public SpaceInvadersModel(){
         alien = new Alien(0,0);
         kanon = new LaserKanon(560,580);
         kogels = new CopyOnWriteArrayList<Kogel>();
+        stenen = new CopyOnWriteArrayList<Steen>();
     }
     
     public Alien getAlien(){
@@ -44,14 +45,17 @@ public class SpaceInvadersModel {
     public CopyOnWriteArrayList<Kogel> getKogels() { //https://stackoverflow.com/questions/31805873/mutli-threading-how-to-safely-remove-from-arraylist
         return kogels;
     }
-    
+      public CopyOnWriteArrayList<Steen> getStenen() { 
+        return stenen;
+      }
     public void addKogel(Kogel kogel) {
         this.kogels.add(kogel);
     }
     
-    public Steen getSteen(){
-        return steen;
+    public void addSteen(Steen steen) {
+        this.stenen.add(steen);
     }
+
     
     
 }
