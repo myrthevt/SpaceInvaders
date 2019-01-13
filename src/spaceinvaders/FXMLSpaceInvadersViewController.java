@@ -71,11 +71,11 @@ public class FXMLSpaceInvadersViewController {
     public void update() {
         view.update();
     }
-   
     private void animate() {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
+                
                 model.getAlien().Beweeg(1000);
                 
                 for(Kogel kogel : model.getKogels()) {
@@ -87,19 +87,32 @@ public class FXMLSpaceInvadersViewController {
                 for(Kogel kogel : model.getKogels()) {
                     kogel.beweegNaarBoven();
                 }
-                for(Steen steen : model.getStenen()){
-                    if (steen.getY() >= 600) {
-                        model.getStenen().remove(steen);
-                    }
-                }
-                for(Steen steen : model.getStenen()){
-                    steen.BeweegNaarOnder();
-                }
-                
                 update();
             }
         }.start();
-    }
+        new AnimationTimer() {
+            private long vorigeKeer = 0;
+            private long minimumTijd = 1000_000_000;
+            
+            @Override            
+            public void handle(long now) {
+                long diff = now - vorigeKeer;
+                if(diff >= minimumTijd){
+                    vorigeKeer = now;
+                    System.out.println("hey");
+                    for(Steen steen : model.getStenen()){
+                        if (steen.getY() >= 600) {
+                            model.getStenen().remove(steen);
+                        }
+                    }
+                    for(Steen steen : model.getStenen()){
+                        steen.BeweegNaarOnder();
+                    }
+                    model.addSteen(new Steen(model.getAlien().getX(), model.getAlien().getY()));
+                }
+        }
+    }.start();
+                }
     
      public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
