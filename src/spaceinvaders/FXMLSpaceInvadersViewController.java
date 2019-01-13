@@ -6,15 +6,11 @@
 
 package spaceinvaders;
 
-import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
  
 
 public class FXMLSpaceInvadersViewController {
@@ -30,11 +26,10 @@ public class FXMLSpaceInvadersViewController {
 
     
     private SpaceInvadersModel model; // controller moet eigenschappen van het model kunnen veranderen
-    private SpaceInvadersView view; 
+    private SpaceInvadersView view;     
     
     @FXML
     void initialize() {
-        System.out.println("ddjhgj");
     }
     
     public void setModel(SpaceInvadersModel model){
@@ -46,6 +41,7 @@ public class FXMLSpaceInvadersViewController {
                 
         view.setOnKeyPressed(this::beweegKanon);
         this.animate();
+        this.AlienDood();
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -99,7 +95,6 @@ public class FXMLSpaceInvadersViewController {
                 long diff = now - vorigeKeer;
                 if(diff >= minimumTijd){
                     vorigeKeer = now;
-                    System.out.println("hey");
                     for(Steen steen : model.getStenen()){
                         if (steen.getY() >= 600) {
                             model.getStenen().remove(steen);
@@ -117,6 +112,15 @@ public class FXMLSpaceInvadersViewController {
      public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
     }
+     public void AlienDood(){
+         for(Kogel kogel : model.getKogels()){
+             if(model.getAlien().getX() == kogel.getX() && model.getAlien().getY() == kogel.getY()){
+                model.getKogels().remove(kogel);
+                update();
+                //removeItem
+             }
+         }
+     }
 
 } 
     
