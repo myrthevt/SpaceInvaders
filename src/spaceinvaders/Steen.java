@@ -50,9 +50,6 @@ public class Steen {
        y = y + 15;
    }
    
-   public void tick (){
-       y = y + dy;
-   }
     
 
     
