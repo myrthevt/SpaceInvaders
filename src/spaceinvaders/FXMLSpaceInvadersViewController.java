@@ -93,6 +93,14 @@ public class FXMLSpaceInvadersViewController {
                 for(Kogel kogel : model.getKogels()) {
                     kogel.beweegNaarBoven();
                 }
+                for(Steen steen : model.getStenen()){
+                    if (steen.getY() >= 600) {
+                        model.getStenen().remove(steen);
+                    }
+                }
+                for(Steen steen : model.getStenen()){
+                    steen.BeweegNaarOnder();
+                }
                 
                 update();
             }
