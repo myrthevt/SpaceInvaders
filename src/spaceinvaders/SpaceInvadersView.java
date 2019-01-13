@@ -41,10 +41,12 @@ public class SpaceInvadersView extends Region {
         laserKanon.setLayoutY(model.getKanon().getY());
       getChildren().add(laserKanon);
       
-      Circle kogel = new Circle(model.getKogel().getX(), model.getKogel().getY(), 7, Color.VIOLET);
-        kogel.setLayoutX(model.getKanon().getX()+ 65);
-        kogel.setLayoutY(model.getKanon().getY());
-      getChildren().add(kogel);
+      if(!model.getKogels().isEmpty()) {
+          for(Kogel kogel : model.getKogels()) {
+            Circle kogelView = new Circle(kogel.getX(), kogel.getY(), 7, Color.VIOLET);
+            getChildren().add(kogelView);
+          }
+      }
       
       Rectangle steen = new Rectangle(127, 140, 5, 15);
         steen.setFill(Color.ORANGE);
@@ -53,11 +55,12 @@ public class SpaceInvadersView extends Region {
       ImageView alien = new ImageView("alienFoto.png");
         alien.setFitHeight(50);
         alien.setFitWidth(60);
-        alien.setLayoutX(100);
-        alien.setLayoutY(80);
+        alien.setLayoutX(model.getAlien().getX());
+        alien.setLayoutY(model.getAlien().getY());
 
       getChildren().add(alien);
       }
+    
      
           
     }
