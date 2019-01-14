@@ -41,7 +41,8 @@ public class FXMLSpaceInvadersViewController {
                 
         view.setOnKeyPressed(this::beweegKanon);
         this.animate();
-        this.AlienDood();
+        model.NieuweAlien();
+        //this.AlienDood();
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -71,8 +72,9 @@ public class FXMLSpaceInvadersViewController {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                
-                model.getAlien().Beweeg(1000);
+                for(Alien alien : model.getAliens()){
+                    alien.Beweeg(1080);
+                }
                 
                 for(Kogel kogel : model.getKogels()) {
                     if (kogel.getY() <= 0) {
@@ -103,7 +105,9 @@ public class FXMLSpaceInvadersViewController {
                     for(Steen steen : model.getStenen()){
                         steen.BeweegNaarOnder();
                     }
-                    model.addSteen(new Steen(model.getAlien().getX(), model.getAlien().getY()));
+                    for(Alien alien : model.getAliens()){
+                    model.addSteen(new Steen(alien.getX(), alien.getY()));
+                    }
                 }
         }
     }.start();
@@ -112,15 +116,15 @@ public class FXMLSpaceInvadersViewController {
      public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
     }
-     public void AlienDood(){
-         for(Kogel kogel : model.getKogels()){
-             if(model.getAlien().getX() == kogel.getX() && model.getAlien().getY() == kogel.getY()){
-                model.getKogels().remove(kogel);
-                update();
-                //removeItem
-             }
-         }
-     }
+     //public void AlienDood(){
+         //for(Kogel kogel : model.getKogels()){
+             //if(model.getAliens().getX() == kogel.getX() && model.getAliens().getY() == kogel.getY()){
+                //model.getKogels().clear();
+                
+                //update();
+             //}
+         //}
+     //}
 
 } 
     
