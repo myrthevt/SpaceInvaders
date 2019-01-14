@@ -90,7 +90,7 @@ public class FXMLSpaceInvadersViewController {
         }.start();
         new AnimationTimer() {
             private long vorigeKeer = 0;
-            private long minimumTijd = 1000_000_000;
+            private long minimumTijd = 1999_999_999;
             
             @Override            
             public void handle(long now) {
