@@ -50,7 +50,7 @@ public class SpaceInvadersView extends Region {
       
       if(!model.getStenen().isEmpty()){
          for(Steen steen : model.getStenen()){
-            Rectangle steenView = new Rectangle(steen.getX(),steen.getY(), 5, 15);
+            Rectangle steenView = new Rectangle(steen.getX(),steen.getY()+70, 5, 15);
             steenView.setFill(Color.ORANGE);
             getChildren().add(steenView);  
         }
