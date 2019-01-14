@@ -55,12 +55,12 @@ public class SpaceInvadersView extends Region {
             getChildren().add(steenView);  
         }
       }
-      //for(Alien alien : model.getAliens()){
+      for(Alien alien : model.getAliens()){
             ImageView alienView = new ImageView("alienFoto.png");
             alienView.setFitHeight(50);
             alienView.setFitWidth(60);
-            alienView.setLayoutX(model.getAlien().getX());
-            alienView.setLayoutY(model.getAlien().getY());
+            alienView.setLayoutX(alien.getX());
+            alienView.setLayoutY(alien.getY());
 
         getChildren().add(alienView);
       }
@@ -68,4 +68,5 @@ public class SpaceInvadersView extends Region {
      
           
     }
+}
 
