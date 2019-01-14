@@ -13,6 +13,8 @@ public class Alien {
     //datamembers
     public int x;
     public int y;
+    public boolean isVisible;
+    private SpaceInvadersModel model;
     
     public boolean gaatNaarLinks;
     
@@ -57,13 +59,13 @@ public class Alien {
      * beweeg naar rechts
      */
     public void BeweegRechts(){
-        x+=5;
+        x+=100;
     }
     /** 
      * beweeg naar links
      */
     public void BeweegLinks(){
-        x-=5;
+        x-=100;
     }
     /**
      * beweeg omlaag
@@ -85,7 +87,11 @@ public class Alien {
             BeweegRechts();
         }
     }
-    
+    //public void IsGeraakt(){
+        //if(model.getKogels() == model.getAliens()){
+            //isVisible == true;
+        //}
+    //}
     //public void Verdwijn(){
         //if(IsGeraakt() == true)
         //Hide(FXMLSpaceInvadersViewController.alien);
