@@ -47,10 +47,12 @@ public class FXMLSpaceInvadersViewController {
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
                 case RIGHT:
-                    
-                    model.getKanon().beweegNaarRechts();
-                    update();
-                    break;
+                    if(model.getKanon().getX() < 1000){
+                        model.getKanon().beweegNaarRechts();
+                        update();
+                        break;}
+                    else{
+                    }
                 case LEFT:
                     
                     model.getKanon().beweegNaarLinks();
@@ -88,29 +90,29 @@ public class FXMLSpaceInvadersViewController {
                 update();
             }
         }.start();
-        new AnimationTimer() {
-            private long vorigeKeer = 0;
-            private long minimumTijd = 1999_999_999;
+        //new AnimationTimer() {
+            //private long vorigeKeer = 0;
+            //private long minimumTijd = 1999_999_999;
             
-            @Override            
-            public void handle(long now) {
-                long diff = now - vorigeKeer;
-                if(diff >= minimumTijd){
-                    vorigeKeer = now;
-                    for(Steen steen : model.getStenen()){
-                        if (steen.getY() >= 600) {
-                            model.getStenen().remove(steen);
-                        }
-                    }
-                    for(Steen steen : model.getStenen()){
-                        steen.BeweegNaarOnder();
-                    }
-                    for(Alien alien : model.getAliens()){
-                    model.addSteen(new Steen(alien.getX(), alien.getY()));
-                    }
-                }
-        }
-    }.start();
+            //@Override            
+            //public void handle(long now) {
+                //long diff = now - vorigeKeer;
+                //if(diff >= minimumTijd){
+                    //vorigeKeer = now;
+                    //for(Steen steen : model.getStenen()){
+                        //if (steen.getY() >= 600) {
+                            //model.getStenen().remove(steen);
+                        //}
+                    //}
+                    //for(Steen steen : model.getStenen()){
+                       // steen.BeweegNaarOnder();
+                    //}
+                    //for(Alien alien : model.getAliens()){
+                    //model.addSteen(new Steen(alien.getX(), alien.getY()));
+                    //}
+                //}
+        //}
+    //}.start();
                 }
     
      public void vuurKogel(){
