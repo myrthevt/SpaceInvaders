@@ -5,6 +5,7 @@
  */
 package spaceinvaders;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -17,6 +18,7 @@ import javafx.scene.shape.Rectangle;
  */
 public class SpaceInvadersView extends Region {
     private SpaceInvadersModel model;
+    //private static Image alienView = new Image("alienFoto.png");
     
     public SpaceInvadersView (SpaceInvadersModel model){
         this.model = model;
@@ -56,17 +58,22 @@ public class SpaceInvadersView extends Region {
         }
       }
       for(Alien alien : model.getAliens()){
-            ImageView alienView = new ImageView("alienFoto.png");
-            alienView.setFitHeight(50);
-            alienView.setFitWidth(60);
-            alienView.setLayoutX(alien.getX());
-            alienView.setLayoutY(alien.getY());
-
-        getChildren().add(alienView);
+          if(alien.isVisible()){
+              Rectangle alienView = new Rectangle(alien.getX(), alien.getY(), 50, 50);
+              alienView.setFill(Color.RED);
+            //ImageView alienView = new ImageView("alienFoto.png");
+            //alienView = prent;
+            //alienView.setFitHeight(50);
+            //alienView.setFitWidth(60);
+                alienView.setLayoutX(alien.getX());
+                alienView.setLayoutY(alien.getY());
+            
+            getChildren().add(alienView);
+          }
+          else{
+          }
       }
-    
-     
-          
     }
 }
+  
 
