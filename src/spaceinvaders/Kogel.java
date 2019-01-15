@@ -60,7 +60,7 @@ public class Kogel {
      * beweeg de kogel naar boven
      */
     public void beweegNaarBoven(){
-            y -= 100;
+            y -= 15;
     }
 
     
