@@ -11,9 +11,9 @@ package spaceinvaders;
  */
 public class Alien {
     //datamembers
-    public int x;
-    public int y;
-    public boolean isVisible;
+    private int x;
+    private int y;
+    private boolean visible;
     private SpaceInvadersModel model;
     
     public boolean gaatNaarLinks;
@@ -55,17 +55,19 @@ public class Alien {
     public void setY(int y) {
         this.y = y;
     }
+    
+    
     /**
      * beweeg naar rechts
      */
     public void BeweegRechts(){
-        x+=15;
+        x+=5;
     }
     /** 
      * beweeg naar links
      */
     public void BeweegLinks(){
-        x-=15;
+        x-=5;
     }
     /**
      * beweeg omlaag
@@ -87,15 +89,21 @@ public class Alien {
             BeweegRechts();
         }
     }
-public void AlienDood(){
-        for(Alien alien : model.getAliens()){
-         for(Kogel kogel : model.getKogels()){
-             if(alien.getX() == kogel.getX() && alien.getY() == kogel.getY()){
-                alien.isVisible = false;
-             }
-         }
-     }
+
+    /**
+     * @return the visible
+     */
+    public boolean isVisible() {
+        return visible;
     }
+
+    /**
+     * @param visible the visible to set
+     */
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+    
     }
     
         
