@@ -46,30 +46,59 @@ public class SpaceInvadersModel {
     public CopyOnWriteArrayList<Kogel> getKogels() { //https://stackoverflow.com/questions/31805873/mutli-threading-how-to-safely-remove-from-arraylist
         return kogels;
     }
-      public CopyOnWriteArrayList<Steen> getStenen() { 
+    
+    
+    
+    
+    public CopyOnWriteArrayList<Steen> getStenen() { 
         return stenen;
       }
+      
+      
+      
     public void addKogel(Kogel kogel) {
         this.kogels.add(kogel);
     }
     
+    
+    
     public void addSteen(Steen steen) {
         this.stenen.add(steen);
     }
+    
+    
     public void NieuweAlien(){ 
         for(int i = 0; i < 5; i++){
             this.addAlien(new Alien(i*70, 0));
-        //for (int a = 0; a < 5; a++){
-            //this.addAlien(new Alien(a*70, 70));
-        //}  
-        //for (int b = 0; b < 5; b++){
-            //this.addAlien(new Alien(b*70, 140));
-        //}
+        for (int a = 0; a < 5; a++){
+            this.addAlien(new Alien(a*70, 70));
+        }  
+        for (int b = 0; b < 5; b++){
+            this.addAlien(new Alien(b*70, 140));
+        }
         }
     }
     public void addAlien(Alien alien){
         this.aliens.add(alien);
     }
-    
+    public void alienDood(){
+        for(Alien alien : getAliens()) {
+         for(Kogel kogel : getKogels()){
+            if(kogel.getX() < alien.getX() + 50 && kogel.getX() > alien.getX() - 50){
+                if(kogel.getY() < alien.getY() + 50 && kogel.getY() > alien.getY() - 50){
+                    System.out.println("spaceinvaders.SpaceInvadersModel.alienDood()");
+                    alien.setVisible(false);
+                }
+            }
+        }
+    }
+    }
+    public void verwijderAlien(){
+        for(Alien alien : getAliens()){
+            if(alien.isVisible() == false){
+                getAliens().remove(alien);
+            }
+        } 
+    }
     
 }
