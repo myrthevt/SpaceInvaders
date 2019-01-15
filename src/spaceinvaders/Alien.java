@@ -22,6 +22,7 @@ public class Alien {
     public Alien(int x, int y) {
         this.x = x;
         this.y = y;
+        visible = true;
     }
 
     /**
