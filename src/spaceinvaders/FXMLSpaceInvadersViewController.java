@@ -42,12 +42,14 @@ public class FXMLSpaceInvadersViewController {
         view.setOnKeyPressed(this::beweegKanon);
         this.animate();
         model.NieuweAlien();
-        this.verwijderAlien();
+        //this.AlienDood();
+        //this.verwijderAlien();
+        
     }
-     public void beweegKanon (javafx.scene.input.KeyEvent e){
-         switch(e.getCode()){
+    public void beweegKanon (javafx.scene.input.KeyEvent e){
+        switch(e.getCode()){
                 case RIGHT:
-                    if(model.getKanon().getX() < 1000){
+                    if(model.getKanon().getX() < 1100){
                         model.getKanon().beweegNaarRechts();
                         update();
                         break;}
@@ -72,12 +74,19 @@ public class FXMLSpaceInvadersViewController {
     public void update() {
         view.update();
     }
+    
+    //public void tick(){
+        //model.alienDood();
+        //update();
+    //}
     private void animate() {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
+                model.alienDood();
+                update();
                 for(Alien alien : model.getAliens()){
-                    alien.Beweeg(1080);
+                    alien.Beweeg(600);
                 }
                 
                 for(Kogel kogel : model.getKogels()) {
@@ -102,12 +111,12 @@ public class FXMLSpaceInvadersViewController {
                 //if(diff >= minimumTijd){
                     //vorigeKeer = now;
                     //for(Steen steen : model.getStenen()){
-                        //if (steen.getY() >= 600) {
+                        //if (steen.getY() >= 800) {
                             //model.getStenen().remove(steen);
                         //}
                     //}
                     //for(Steen steen : model.getStenen()){
-                       // steen.BeweegNaarOnder();
+                        //steen.BeweegNaarOnder();
                     //}
                     //for(Alien alien : model.getAliens()){
                     //model.addSteen(new Steen(alien.getX(), alien.getY()));
@@ -117,16 +126,16 @@ public class FXMLSpaceInvadersViewController {
     //}.start();
                 }
     
-     public void vuurKogel(){
+    public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
     }
     public void verwijderAlien(){
         for(Alien alien : model.getAliens()){
-            if(alien.isVisible = false){
+            if(alien.isVisible() == false){
                 model.getAliens().remove(alien);
-                update();
             }
         }
+        update(); 
     }
 } 
     
