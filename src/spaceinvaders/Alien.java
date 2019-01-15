@@ -87,15 +87,15 @@ public class Alien {
             BeweegRechts();
         }
     }
-    //public void IsGeraakt(){
-        //if(model.getKogels() == model.getAliens()){
-            //isVisible == true;
-        //}
-    //}
-    //public void Verdwijn(){
-        //if(IsGeraakt() == true)
-        //Hide(FXMLSpaceInvadersViewController.alien);
-    //}
+public void AlienDood(){
+        for(Alien alien : model.getAliens()){
+         for(Kogel kogel : model.getKogels()){
+             if(alien.getX() == kogel.getX() && alien.getY() == kogel.getY()){
+                alien.isVisible = false;
+             }
+         }
+     }
+    }
     }
     
         
