@@ -42,7 +42,7 @@ public class FXMLSpaceInvadersViewController {
         view.setOnKeyPressed(this::beweegKanon);
         this.animate();
         model.NieuweAlien();
-        //this.AlienDood();
+        this.verwijderAlien();
     }
      public void beweegKanon (javafx.scene.input.KeyEvent e){
          switch(e.getCode()){
@@ -120,16 +120,14 @@ public class FXMLSpaceInvadersViewController {
      public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
     }
-     //public void AlienDood(){
-         //for(Kogel kogel : model.getKogels()){
-             //if(model.getAliens().getX() == kogel.getX() && model.getAliens().getY() == kogel.getY()){
-                //model.getKogels().clear();
-                
-                //update();
-             //}
-         //}
-     //}
-
+    public void verwijderAlien(){
+        for(Alien alien : model.getAliens()){
+            if(alien.isVisible = false){
+                model.getAliens().remove(alien);
+                update();
+            }
+        }
+    }
 } 
     
 
