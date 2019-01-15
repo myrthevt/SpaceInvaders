@@ -59,12 +59,12 @@ public class SpaceInvadersModel {
     public void NieuweAlien(){ 
         for(int i = 0; i < 5; i++){
             this.addAlien(new Alien(i*70, 0));
-        for (int a = 0; a < 5; a++){
-            this.addAlien(new Alien(a*70, 70));
-        }  
-        for (int b = 0; b < 5; b++){
-            this.addAlien(new Alien(b*70, 140));
-        }
+        //for (int a = 0; a < 5; a++){
+            //this.addAlien(new Alien(a*70, 70));
+        //}  
+        //for (int b = 0; b < 5; b++){
+            //this.addAlien(new Alien(b*70, 140));
+        //}
         }
     }
     public void addAlien(Alien alien){
