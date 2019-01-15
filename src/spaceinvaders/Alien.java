@@ -59,13 +59,13 @@ public class Alien {
      * beweeg naar rechts
      */
     public void BeweegRechts(){
-        x+=100;
+        x+=15;
     }
     /** 
      * beweeg naar links
      */
     public void BeweegLinks(){
-        x-=100;
+        x-=15;
     }
     /**
      * beweeg omlaag
