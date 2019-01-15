@@ -54,10 +54,12 @@ public class FXMLSpaceInvadersViewController {
                     else{
                     }
                 case LEFT:
-                    
-                    model.getKanon().beweegNaarLinks();
-                    update();
-                    break;
+                    if(model.getKanon().getX() > 0){
+                        model.getKanon().beweegNaarLinks();
+                        update();
+                        break;}
+                    else{   
+                    }
                 
                 case SPACE:
                      
