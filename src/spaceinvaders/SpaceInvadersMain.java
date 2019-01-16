@@ -13,12 +13,15 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author vantichelen
+ * @author Van Tichelen Myrthe, Shcreurs Femke, Maes Marie-Julie
  */
+
 public class SpaceInvadersMain extends Application {
     
     @Override
+    // Methode om het spel te starten
     public void start(Stage stage) throws Exception {
+        
       //model
       SpaceInvadersModel model = new SpaceInvadersModel();
       Alien alien = new Alien(0,0);
@@ -44,12 +47,11 @@ public class SpaceInvadersMain extends Application {
     }
       
       
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        launch(args);
-    }
+    //public static void main(String[] args) {
+        //launch(args);
+    //}
     
 }
