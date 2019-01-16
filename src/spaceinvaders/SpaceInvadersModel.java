@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import javafx.scene.media.AudioClip;
 
 /**
  *
- * @author Van Tichelen, Schreurs Femke, Maes Marie-Julie
+ * @author Van Tichelen Myrthe, Schreurs Femke, Maes Marie-Julie
  */
 
 public class SpaceInvadersModel {
@@ -21,7 +22,6 @@ public class SpaceInvadersModel {
     private CopyOnWriteArrayList<Alien> aliens; // Een lijst om veilig een element (Alien) uit de ArrayList te verwijderen, tijdens een Animation Timer
     private CopyOnWriteArrayList<Kogel> kogels; //Een lijst om veilig een element (Kogel) uit de ArrayList te verwijderen, tijdens een AnimationTimer
     private CopyOnWriteArrayList<Steen> stenen; // Een lijst om veilig een element (Steen) uit de ArrayList te verijderen, tijdens een AnimationTimer
-    private int aantalAliens;
    
     
     public SpaceInvadersModel(){
@@ -89,11 +89,14 @@ public class SpaceInvadersModel {
     
     //Methode om meerde Aliens op het scherm te hebben
     public void NieuweAlien(){ 
+        //eerste rij Aliens
         for(int i = 0; i < 5; i++){
             this.addAlien(new Alien(i*70, 0));
+        //tweede rij Aliens    
         for (int a = 0; a < 5; a++){
             this.addAlien(new Alien(a*70, 70));
         }  
+        //derde rij Aliens
         for (int b = 0; b < 5; b++){
             this.addAlien(new Alien(b*70, 140));
         }
@@ -112,24 +115,30 @@ public class SpaceInvadersModel {
     
     //Methode om de Alien te doden
     public void alienDood(){
-        for(Alien alien : getAliens()) {
+        for(Alien alien : this.aliens) {;
          for(Kogel kogel : getKogels()){
-            if(kogel.getX() < alien.getX() + 50 && kogel.getX() > alien.getX() - 50){
-                if(kogel.getY() < alien.getY() + 50 && kogel.getY() > alien.getY() - 50){
-                    //System.out.println("spaceinvaders.SpaceInvadersModel.alienDood()");
-                    alien.setVisible(false);
+            if(kogel.getX() - 7 >= alien.getX() && kogel.getX() + 7 <= alien.getX() + 50){
+                if(kogel.getY() -7 <= alien.getY() + 50){
+                     
+                    getAliens().remove(alien);
+                    //getKogels().remove(kogel);
                 }
             }
         }
     }
     }
+  
     
-    // Methode om de Alien te verwijderen van het scherm als deze dood is
-    public void verwijderAlien(){
-        for(Alien alien : getAliens()){
-            if(alien.isVisible() == false){
-                getAliens().remove(alien);
+    public void gedaan(){
+        int i = 0;
+        for(Alien alien : aliens){
+            if(alien.isVisible() == true)  
+                i++;
+            
+        }
+            System.out.println("i = " + i);
+            if(i == 1){
+                System.exit(0);
             }
-        } 
-    }    
-}
+        }
+    }
