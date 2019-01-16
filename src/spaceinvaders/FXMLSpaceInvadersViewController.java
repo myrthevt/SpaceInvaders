@@ -60,8 +60,6 @@ public class FXMLSpaceInvadersViewController {
                         model.getKanon().beweegNaarLinks();
                         update();
                         break;}
-                    else{   
-                    }
                 
                 case SPACE:
                      
@@ -86,7 +84,7 @@ public class FXMLSpaceInvadersViewController {
                 model.alienDood();
                 update();
                 for(Alien alien : model.getAliens()){
-                    alien.Beweeg(600);
+                    alien.beweeg(600);
                 }
                 
                 for(Kogel kogel : model.getKogels()) {
