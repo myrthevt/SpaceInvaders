@@ -11,7 +11,7 @@ package spaceinvaders;
  */
 public class Alien {
     //datamembers
-    private int x, dx;
+    private int x;
     private int y;
     private boolean visible;
     private SpaceInvadersModel model;    
@@ -109,13 +109,6 @@ public class Alien {
      */
     public void setVisible(boolean visible) {
         this.visible = visible;
-    }
-    
-    /*
-    * tick methode van de Alien
-    */
-    public void tick(){
-        x = x + dx;
     }
     
 }
