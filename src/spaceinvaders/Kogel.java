@@ -14,7 +14,7 @@ package spaceinvaders;
 public class Kogel {
     //datamembers
     private int x;
-    private int y, dy;
+    private int y;
 
     
     //constructor
@@ -34,15 +34,6 @@ public class Kogel {
 
     
     /**
-     * Verander de x-coördinaat van de Kogel (setter)
-     * @param x de nieuwe x-coördinaat
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    
-    /**
      * Wat is de y-coördinaat van de Kogel? (getter)
      * @return de y-coördinaat
      */
@@ -50,16 +41,7 @@ public class Kogel {
         return y;
     }
 
-    
-    /**
-     * Verander de y-coördinaat van de Kogel (setter)
-     * @param y de nieuwe y-Coördinaat
-     */
-    public void setY(int y) {
-        this.y = y;
-    }
-    
-    
+     
     // Methode beweeg de Kogel naar boven
     public void beweegNaarBoven(){
             y -= 15;
