@@ -69,14 +69,15 @@ public class SpaceInvadersView extends Region {
             //alienView = prent;
             //alienView.setFitHeight(50);
             //alienView.setFitWidth(60);
-                alienView.setLayoutX(alien.getX());
-                alienView.setLayoutY(alien.getY());
+                //alienView.setLayoutX(alien.getX());
+                //alienView.setLayoutY(alien.getY());
             
             getChildren().add(alienView);
           }
           else{
           }
       }
+      model.gedaan();
     }
 }
   
