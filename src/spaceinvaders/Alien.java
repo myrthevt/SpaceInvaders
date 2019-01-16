@@ -35,15 +35,6 @@ public class Alien {
 
     
     /**
-     * Verander de x-coördinaat (setter)
-     * @param x de nieuwe x-coördinaat
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    
-    /**
      * Wat is de y-coördinaat van de Alien? (getter)
      * @return de y-coördinaat
      */
@@ -56,9 +47,9 @@ public class Alien {
      * Verander de y-coördinaat van de Alien? (setter)
      * @param y de nieuwe y-coördinaat
      */
-    public void setY(int y) {
-        this.y = y;
-    }
+    //public void setY(int y) {
+        //this.y = y;
+    //}
     
     
     // Methode beweeg naar rechts
