@@ -61,17 +61,13 @@ public class Alien {
     }
     
     
-    /**
-     * Methode beweeg naar rechts
-     */
+    // Methode beweeg naar rechts
     public void beweegRechts(){
         x+=5;
     }
     
     
-    /** 
-     * Methode beweeg naar links
-     */
+    //Methode beweeg naar links
     public void beweegLinks(){
         x-=5;
     }
