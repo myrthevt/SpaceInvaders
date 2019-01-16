@@ -37,7 +37,7 @@ public class LaserKanon {
      * @param x de nieuwe x-coördinaat
      */
     public void setX(int x) {
-        this.x = x;
+       this.x = x;
     }
 
     
@@ -55,7 +55,7 @@ public class LaserKanon {
      * @param y de nieuwe y-coördinaat
      */
     public void setY(int y) {
-        this.y = y;
+       this.y = y;
     }
     
    
