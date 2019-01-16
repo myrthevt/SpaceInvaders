@@ -14,21 +14,24 @@ import javafx.scene.shape.Rectangle;
 
 /**
  *
- * @author femke
+ * @author Van Tichelen Myrthe, Schreurs Femke, Maes Marie-Julie
  */
+
 public class SpaceInvadersView extends Region {
+    // datamembers
     private SpaceInvadersModel model;
     //private static Image alienView = new Image("alienFoto.png");
     
+    
+    // constructor
     public SpaceInvadersView (SpaceInvadersModel model){
         this.model = model;
         update ();
     }
     
- 
-    
-    
-           
+    /**
+     * Methode om de view aan te maken
+     */    
     public void update(){
       getChildren().clear();
       ImageView achtergrond = new ImageView("achtergrondSpelFoto.png");
@@ -57,10 +60,11 @@ public class SpaceInvadersView extends Region {
             getChildren().add(steenView);  
         }
       }
+      
       for(Alien alien : model.getAliens()){
           if(alien.isVisible()){
-              Rectangle alienView = new Rectangle(alien.getX(), alien.getY(), 50, 50);
-              alienView.setFill(Color.RED);
+            Rectangle alienView = new Rectangle(alien.getX(), alien.getY(), 50, 50);
+            alienView.setFill(Color.RED);
             //ImageView alienView = new ImageView("alienFoto.png");
             //alienView = prent;
             //alienView.setFitHeight(50);
