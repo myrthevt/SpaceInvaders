@@ -90,7 +90,7 @@ public class FXMLSpaceInvadersViewController {
                 update();
                 System.out.println("Handle");
                 for(Alien alien : model.getAliens()){
-                    alien.beweeg(1080);
+                    alien.beweeg(1240);
                 }
                 
                 for(Kogel kogel : model.getKogels()) {
