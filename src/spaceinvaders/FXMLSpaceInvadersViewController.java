@@ -26,12 +26,17 @@ public class FXMLSpaceInvadersViewController {
 
     
     private SpaceInvadersModel model; // controller moet eigenschappen van het model kunnen veranderen
-    private SpaceInvadersView view;     
+    private SpaceInvadersView view;   // controller moet eigenschappen van de view kunnen veranderen  
     
     @FXML
     void initialize() {
     }
     
+    
+    /**
+     * Wat is het aangepaste model van het spel? (getter)
+     * @param model 
+     */
     public void setModel(SpaceInvadersModel model){
         this.model = model;
         view = new SpaceInvadersView (model);
@@ -42,10 +47,10 @@ public class FXMLSpaceInvadersViewController {
         view.setOnKeyPressed(this::beweegKanon);
         this.animate();
         model.NieuweAlien();
-        //this.AlienDood();
-        //this.verwijderAlien();
-        
     }
+    
+    
+    // Methode om de het LaserKanon en de Kogel te laten bewegen met Keyevents
     public void beweegKanon (javafx.scene.input.KeyEvent e){
         switch(e.getCode()){
                 case RIGHT:
@@ -69,22 +74,23 @@ public class FXMLSpaceInvadersViewController {
          }
         }
      
+    
+    // Methode om de view te updaten
     public void update() {
         view.update();
     }
     
-    //public void tick(){
-        //model.alienDood();
-        //update();
-    //}
+    
+    // AnimationTimer voor de bewegeing en dood van de Alien, idem Kogel
     private void animate() {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
                 model.alienDood();
                 update();
+                System.out.println("Handle");
                 for(Alien alien : model.getAliens()){
-                    alien.beweeg(600);
+                    alien.beweeg(1080);
                 }
                 
                 for(Kogel kogel : model.getKogels()) {
@@ -99,6 +105,12 @@ public class FXMLSpaceInvadersViewController {
                 update();
             }
         }.start();
+        
+
+
+
+
+ // We hebben deze AnimationTimer voor de stenen geprobeerd, maar deze verliep veel te snel
         //new AnimationTimer() {
             //private long vorigeKeer = 0;
             //private long minimumTijd = 1999_999_999;
@@ -124,16 +136,10 @@ public class FXMLSpaceInvadersViewController {
     //}.start();
                 }
     
+    
+    // Methode om een Kogel af te vuren
     public void vuurKogel(){
         model.addKogel(new Kogel(model.getKanon().getX() + 65, model.getKanon().getY()));
-    }
-    public void verwijderAlien(){
-        for(Alien alien : model.getAliens()){
-            if(alien.isVisible() == false){
-                model.getAliens().remove(alien);
-            }
-        }
-        update(); 
     }
 } 
     
