@@ -5,17 +5,14 @@
  */
 package spaceinvaders;
 
-import java.io.File;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
- *
+ *Deze taak was een volledige samenwerking tussen ons 3, mede mogelijk gemaat danzij GitHub :)
  * @author Van Tichelen Myrthe, Shcreurs Femke, Maes Marie-Julie
  */
 
