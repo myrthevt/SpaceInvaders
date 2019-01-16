@@ -25,7 +25,7 @@ public class Kogel {
     
     
     /**
-     * Wat is de x-coördinaat van de kogel? (getter)
+     * Wat is de x-coördinaat van de Kogel? (getter)
      * @return de x-coördinaat
      */
     public int getX() {
@@ -34,7 +34,7 @@ public class Kogel {
 
     
     /**
-     * Verander de x-coördinaat van de kogel (setter)
+     * Verander de x-coördinaat van de Kogel (setter)
      * @param x de nieuwe x-coördinaat
      */
     public void setX(int x) {
@@ -43,7 +43,7 @@ public class Kogel {
 
     
     /**
-     * Wat is de y-coördinaat van de kogel? (getter)
+     * Wat is de y-coördinaat van de Kogel? (getter)
      * @return de y-coördinaat
      */
     public int getY() {
@@ -52,7 +52,7 @@ public class Kogel {
 
     
     /**
-     * Verander de y-coördinaat van de kogel (setter)
+     * Verander de y-coördinaat van de Kogel (setter)
      * @param y de nieuwe y-Coördinaat
      */
     public void setY(int y) {
@@ -60,9 +60,7 @@ public class Kogel {
     }
     
     
-    /**
-     * Methode beweeg de kogel naar boven
-     */
+    // Methode beweeg de Kogel naar boven
     public void beweegNaarBoven(){
             y -= 15;
     }    
