@@ -7,7 +7,7 @@ package spaceinvaders;
 
 /**
  *
- * @author vantichelen
+ * @author Van Tichelen Myrthe, Schreurs Femke, Maes Marie-Julie
  */
 
 public class SpaceInvaders {
@@ -15,6 +15,8 @@ public class SpaceInvaders {
     private int breedte;
     private int hoogte;
     private int punten;
+    
+    
     //constructor
     public SpaceInvaders(int breedte, int hoogte, int punten) {
         this.breedte = breedte;
@@ -23,52 +25,36 @@ public class SpaceInvaders {
     }
 
     /**
-     * wat is de breedte van het veld waar het spel in wordt gespeeld?
+     * Wat is de breedte van het veld waar het spel in wordt gespeeld? (getter)
      * @return de breedte
      */
     public int getBreedte() {
         return breedte;
     }
 
-    /**
-     * verander de breedte 
-     * @param breedte de nieuwe breedte
-     */
-    public void setBreedte(int breedte) {
-        this.breedte = breedte;
-    }
 
     /**
-     * wat is de hoogte van het veld waar het spel in wordt gespeeld?
+     * Wat is de hoogte van het veld waar het spel in wordt gespeeld? (getter)
      * @return de hoogte
      */
     public int getHoogte() {
         return hoogte;
     }
 
+    
     /**
-     * verander de hoogte
-     * @param hoogte de nieuwe hoogte
-     */
-    public void setHoogte(int hoogte) {
-        this.hoogte = hoogte;
-    }
-
-    /**
-     * wat is het aantal behaalde punten
+     * Wat is het aantal behaalde punten? (getter)
      * @return de punten
      */
     public int getPunten() {
         return punten;
     }
 
-    /** verander de punten
+    
+    /** Verander de punten (setter)
      * @param punten de nieuwe punten
      */
     public void setPunten(int punten) {
         this.punten = punten;
-    }
-
-   
-    
+    }    
 }
