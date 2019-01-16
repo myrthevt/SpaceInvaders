@@ -5,11 +5,7 @@
  */
 package spaceinvaders;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import javafx.scene.media.AudioClip;
 
 /**
  *
@@ -116,12 +112,12 @@ public class SpaceInvadersModel {
     //Methode om de Alien te doden
     public void alienDood(){
         for(Alien alien : this.aliens) {;
-         for(Kogel kogel : getKogels()){
+         for(Kogel kogel : this.kogels){
             if(kogel.getX() - 7 >= alien.getX() && kogel.getX() + 7 <= alien.getX() + 50){
                 if(kogel.getY() -7 <= alien.getY() + 50){
                      
-                    getAliens().remove(alien);
-                    //getKogels().remove(kogel);
+                    aliens.remove(alien); 
+                    kogels.remove(kogel);
                 }
             }
         }
@@ -136,7 +132,6 @@ public class SpaceInvadersModel {
                 i++;
             
         }
-            System.out.println("i = " + i);
             if(i == 1){
                 System.exit(0);
             }
