@@ -4,73 +4,66 @@
  * and open the template in the editor.
  */
 
-
-
 package spaceinvaders;
-
-
 
 /**
  *
- * @author vantichelen
+ * @author Van Tichelen Myrthe, SSchreurs Femke, Maes Marie-Julie
  */
+
 public class Kogel {
     //datamembers
-    public int x;
-    public int y, dy;
+    private int x;
+    private int y, dy;
 
+    
     //constructor
     public Kogel(int x, int y) {
         this.x = x;
         this.y = y;
     }
+    
+    
     /**
-     * wat is het x-coördinaat van de kogel
-     * @return het x-coördinaat
+     * Wat is de x-coördinaat van de kogel? (getter)
+     * @return de x-coördinaat
      */
     public int getX() {
         return x;
     }
 
+    
     /**
-     * Verander x-coördinaat van de kogel
-     * @param x het nieuwe x-coördinaat
+     * Verander de x-coördinaat van de kogel (setter)
+     * @param x de nieuwe x-coördinaat
      */
     public void setX(int x) {
         this.x = x;
     }
 
+    
     /**
-     * wat is het y-coördinaat van de kogel?
-     * @return y-coördinaat
+     * Wat is de y-coördinaat van de kogel? (getter)
+     * @return de y-coördinaat
      */
     public int getY() {
         return y;
     }
 
+    
     /**
-     * verander het y-coördinaat van de kogel
-     * @param y nieuwe y-Coördinaat
+     * Verander de y-coördinaat van de kogel (setter)
+     * @param y de nieuwe y-Coördinaat
      */
     public void setY(int y) {
         this.y = y;
     }
     
+    
     /**
-     * beweeg de kogel naar boven
+     * Methode beweeg de kogel naar boven
      */
     public void beweegNaarBoven(){
             y -= 15;
-    }
-
-    
-    
-    //public void Verdwijn(){
-        //if(IsGeraakt() == true){
-        //Hide(FXMLSpaceInvadersViewController.Kogel);
-        //}
-    //}
-    
-    
-    
+    }    
 }
