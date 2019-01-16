@@ -7,16 +7,15 @@ package spaceinvaders;
 
 /**
  *
- * @author vantichelen
+ * @author Van Tichelen Myrthe, Schreurs Femke, Maes Marie-Julie
  */
 public class Alien {
     //datamembers
     private int x;
     private int y;
     private boolean visible;
-    private SpaceInvadersModel model;
-    
-    public boolean gaatNaarLinks;
+    private SpaceInvadersModel model;    
+    private boolean gaatNaarLinks;
     
     //constructor
     public Alien(int x, int y) {
@@ -25,33 +24,37 @@ public class Alien {
         visible = true;
     }
 
+    
     /**
-     * wat is het x-Coördinaat van de Alien
-     * @return het x-coördinaat
+     * Wat is de x-Coördinaat van de Alien? (getter)
+     * @return de x-coördinaat
      */
     public int getX() {
         return x;
     }
 
+    
     /**
-     * verander het x-coördinaat
-     * @param x het nieuwe x-coördinaat
+     * Verander de x-coördinaat (setter)
+     * @param x de nieuwe x-coördinaat
      */
     public void setX(int x) {
         this.x = x;
     }
 
+    
     /**
-     * wat is het y-coördinaat van de alien?
-     * @return het y-coördinaat
+     * Wat is de y-coördinaat van de Alien? (getter)
+     * @return de y-coördinaat
      */
     public int getY() {
         return y;
     }
 
+    
     /**
-     * verander het y-coördinaat van de Alien
-     * @param y nieuwe y-coördinaat
+     * Verander de y-coördinaat van de Alien? (setter)
+     * @param y de nieuwe y-coördinaat
      */
     public void setY(int y) {
         this.y = y;
@@ -59,24 +62,26 @@ public class Alien {
     
     
     /**
-     * beweeg naar rechts
+     * Methode beweeg naar rechts
      */
-    public void BeweegRechts(){
+    public void beweegRechts(){
         x+=5;
     }
+    
+    
     /** 
-     * beweeg naar links
+     * Methode beweeg naar links
      */
-    public void BeweegLinks(){
+    public void beweegLinks(){
         x-=5;
     }
+    
+
     /**
-     * beweeg omlaag
+     * Methode voor de limiet van de beweging van de ALien
+     * @param maximale breedte
      */
-    public void BeweegOmlaag(){
-        y += 5;
-    }
-    public void Beweeg(double maxWidth) {
+    public void beweeg(double maxWidth) {
         if (x >= maxWidth) {
             gaatNaarLinks = true;
         }
@@ -85,27 +90,32 @@ public class Alien {
         }
         
         if (gaatNaarLinks) {
-            BeweegLinks();
-        } else {
-            BeweegRechts();
+            beweegLinks();
+        } 
+        else {
+            beweegRechts();
         }
     }
 
+    
     /**
-     * @return the visible
+     * Is de Alien zichtbaar of niet? (getter)
+     * @return de zichtbaarheid
      */
     public boolean isVisible() {
         return visible;
     }
 
+    
     /**
+     * Verander de zichtbaarheid (setter)
      * @param visible the visible to set
      */
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
     
-    }
+}
     
         
     
